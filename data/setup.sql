@@ -1,3 +1,4 @@
+
 CREATE TABLE teachers (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     host_id TEXT NOT NULL,
@@ -8,4 +9,3 @@ CREATE TABLE teachers (
     account_id TEXT NOT NULL,
     last_update TEXT NOT NULL
 );
-
