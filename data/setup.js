@@ -22,9 +22,7 @@ async function run() {
             last_update TEXT NOT NULL);
             `);
 
-        console.log('THE TABLES ARE DROPPED! LONG LIVE THE TABLES!')
-
-        await pool.close()
+        await pool.end()
 
     } catch (err) {
         console.log(err);

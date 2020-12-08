@@ -20,9 +20,9 @@ app.post('/insert', async (req, res) => {
 app.get('/find/', async (req, res) => {
     try {
         const returnArray = await Teacher.find();
-        res.status(200).json(returnArray);
+        res.send(returnArray);
     } catch (e) {
-        res.status(500).json(e.message);
+        res.send(e.message);
     }
 })
 
