@@ -7,14 +7,14 @@ const app = express();
 app.use(express.json());
 
 
-app.post('/insert/', async (req, res) => {
+app.post('/insert', async (req, res) => {
     try {
         const returnObj = await Teacher.insert(req.body);
-        res.status(200).json(returnObj);
+        res.send(returnObj);
     } catch (e) {
-        res.status(500).json(e.message);
+        res.send(e.message);
     }
-
+    // res.send('Hello')
 });
 
 app.get('/find/', async (req, res) => {
@@ -38,9 +38,9 @@ app.get('/find/:id', async (req, res) => {
 app.put('/update/:id', async (req, res) => {
     try {
         const returnObj = await Teacher.update(req.params.id, req.body);
-        res.status(200).json(returnObj);
+        res.send(returnObj);
     } catch (e) {
-        res.status(500).json(e.message);
+        res.send(e.message);
     }
 })
 
@@ -53,11 +53,8 @@ app.delete('/delete/:id', async (req, res) => {
     }
 })
 
-app.listen(3000, () => {
-    console.log('3000!!!!!!!!!!!!!!!!!!!!!!')
-})
 
-
+module.exports = app;
 
 
 
